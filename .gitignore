@@ -21,7 +21,6 @@ Homestead.json
 
 yarn.lock
 .editorconfig
-.env.example
 .gitattributes
 .idea/
 
