@@ -22,7 +22,7 @@
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{url('/master/users')}}">User</a>
                             <a class="dropdown-item" href="{{url('/master/teachers')}}">Teachers</a>
-                            <a class="dropdown-item" href="#">Classrooms</a>
+                            <a class="dropdown-item" href="{{url('/master/classrooms')}}">Classrooms</a>
                             <a class="dropdown-item" href="#">Students</a>
                         </div>
                     </li>
