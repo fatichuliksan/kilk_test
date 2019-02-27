@@ -1,23 +1,26 @@
 <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <!--Left Side Of Navbar-->
-    <ul class="navbar-nav mr-auto">
-        <li class="nav-item dropdown">
-            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
-               aria-haspopup="true" aria-expanded="false" v-pre>
-                Master <span class="caret"></span>
-            </a>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">User</a>
-                <a class="dropdown-item" href="#">Teachers</a>
-                <a class="dropdown-item" href="#">Classrooms</a>
-                <a class="dropdown-item" href="#">Students</a>
-            </div>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Class</a>
-        </li>
-    </ul>
-    <!--Right Side Of Navbar-->
+    @guest
+    @else
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item dropdown">
+                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false" v-pre>
+                    Master <span class="caret"></span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{{url('/master/users')}}">User</a>
+                    <a class="dropdown-item" href="#">Teachers</a>
+                    <a class="dropdown-item" href="#">Classrooms</a>
+                    <a class="dropdown-item" href="#">Students</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Class</a>
+            </li>
+        </ul>
+@endguest
+<!--Right Side Of Navbar-->
     <ul class="navbar-nav ml-auto">
         <!--Authentication Links-->
         @guest
