@@ -48,7 +48,12 @@ Route::group(['prefix' => 'master', 'middleware' => 'auth', 'namespace' => 'Mast
     });
 
     Route::group(['prefix' => 'students'], function () {
-
+        Route::get('/', 'StudentsController@index');
+        Route::get('/create', 'StudentsController@create');
+        Route::get('/{student_id}/edit', 'StudentsController@edit');
+        Route::get('/datatable', 'StudentsController@dataTable');
+        Route::post('/save', 'StudentsController@save');
+        Route::DELETE('/{student_id}/delete', 'StudentsController@delete');
     });
 });
 

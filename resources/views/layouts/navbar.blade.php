@@ -23,7 +23,7 @@
                             <a class="dropdown-item" href="{{url('/master/users')}}">User</a>
                             <a class="dropdown-item" href="{{url('/master/teachers')}}">Teachers</a>
                             <a class="dropdown-item" href="{{url('/master/classrooms')}}">Classrooms</a>
-                            <a class="dropdown-item" href="#">Students</a>
+                            <a class="dropdown-item" href="{{url('/master/students')}}">Students</a>
                         </div>
                     </li>
                     <li class="nav-item">
