@@ -13,4 +13,9 @@ class Teacher extends Model
     ];
 
     public $timestamps = true;
+
+    public function classrooms()
+    {
+        return $this->hasMany('App\Classroom', 'teacher_id', 'teacher_id');
+    }
 }

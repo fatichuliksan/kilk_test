@@ -13,4 +13,9 @@ class Student extends Model
     ];
 
     public $timestamps = true;
+
+    public function classroom()
+    {
+        return $this->belongsTo('App\Classroom', 'classroom_id', 'classroom_id');
+    }
 }

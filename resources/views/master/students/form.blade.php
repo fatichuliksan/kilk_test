@@ -46,27 +46,3 @@
         }
     </style>
 @endsection
-
-@section('js')
-    <script type="text/javascript">
-
-        $(document).ready(function () {
-            url = '{{$url}}/datatable';
-            $('table').dataTable({
-                processing: true,
-                serverSide: true,
-                ajax: url,
-                //pageLength: 25,
-                "lengthMenu": [[10, 25, 50, 0], [10, 25, 50, "All"]],
-                responsive: false,
-                dom: '<"html5buttons"B>lTfgitp',
-                columnDefs: [
-                    {"targets": 0, "orderable": false},
-                    {"targets": 1, "name": "name"},
-                    {"targets": 2, "name": "action", "orderable": false},
-                ],
-                "order": [[1, "asc"], [2, "desc"]],
-            });
-        });
-    </script>
-@endsection

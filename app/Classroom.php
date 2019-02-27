@@ -13,4 +13,14 @@ class Classroom extends Model
     ];
 
     public $timestamps = true;
+
+    public function teacher()
+    {
+        return $this->belongsTo('App\Teacher', 'teacher_id', 'teacher_id');
+    }
+
+    public function students()
+    {
+        return $this->hasMany('App\Student', 'classroom_id', 'classroom_id');
+    }
 }

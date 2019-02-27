@@ -27,7 +27,7 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Class</a>
+                        <a class="nav-link" href="{{url('/classes')}}">Classes</a>
                     </li>
                 </ul>
         @endguest

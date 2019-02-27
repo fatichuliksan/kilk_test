@@ -57,8 +57,14 @@ Route::group(['prefix' => 'master', 'middleware' => 'auth', 'namespace' => 'Mast
     });
 });
 
-Route::group(['prefix' => 'class', 'middleware' => 'auth'], function () {
-    Route::get('/', function () {
-        return 'test';
-    });
+Route::group(['prefix' => 'classes', 'middleware' => 'auth'], function () {
+    Route::get('/', 'ClassesController@index');
+    Route::get('/datatable', 'ClassesController@datatable');
+    Route::get('/pdf', 'ClassesController@pdf');
+    Route::get('/teacher/{classroom_id}', 'ClassesController@teacher');
+    Route::post('/teacher/save', 'ClassesController@teacherSave');
+    Route::get('/student/datatable/{classroom_id}', 'ClassesController@studentDatatable');
+    Route::get('/student/{classroom_id}', 'ClassesController@student');
+    Route::post('/student/save', 'ClassesController@studentSave');
+    Route::delete('/student/{classroom_id}/delete', 'ClassesController@studentDelete');
 });
