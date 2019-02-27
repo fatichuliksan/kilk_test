@@ -23,7 +23,7 @@
                                         <th width="5%">No</th>
                                         <th>Name</th>
                                         <th>Email</th>
-                                        <th width="10%">Action</th>
+                                        <th width="20%">Action</th>
                                     </tr>
                                     </thead>
                                 </table>
@@ -57,10 +57,9 @@
             $('table').dataTable({
                 processing: true,
                 serverSide: true,
+                responsive: true,
                 ajax: url,
-                //pageLength: 25,
                 "lengthMenu": [[10, 25, 50, 0], [10, 25, 50, "All"]],
-                responsive: false,
                 dom: '<"html5buttons"B>lTfgitp',
                 columnDefs: [
                     {"targets": 0, "orderable": false},

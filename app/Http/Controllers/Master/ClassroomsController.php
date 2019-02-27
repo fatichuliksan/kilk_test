@@ -6,6 +6,7 @@ use App\Classroom;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Validator;
+use DB;
 
 class ClassroomsController extends Controller
 {
@@ -113,12 +114,12 @@ class ClassroomsController extends Controller
 
         $total = Classroom::count();
         if ($search) {
-            $filteredTotal = Classroom::where("name", "like", "%$search%")->count();
+            $filteredTotal = Classroom::where(db::raw("lower(name)"), "like", "%$search%")->count();
         } else {
             $filteredTotal = $total;
         }
 
-        $data = Classroom::where("name", "like", "%$search%")
+        $data = Classroom::where(db::raw("lower(name)"), "like", "%$search%")
             ->offset($offset)
             ->limit($limit)
             ->orderBy($orderBy, $orderType)

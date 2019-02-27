@@ -56,12 +56,10 @@
         $(document).ready(function () {
             url = '{{$url}}/datatable';
             $('table').dataTable({
-                autoWidth: false,
                 processing: true,
                 serverSide: true,
                 responsive: true,
                 ajax: url,
-                //pageLength: 25,
                 "lengthMenu": [[10, 25, 50, 0], [10, 25, 50, "All"]],
 
                 dom: '<"html5buttons"B>lTfgitp',

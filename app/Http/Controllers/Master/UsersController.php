@@ -6,6 +6,7 @@ use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Validator;
+use DB;
 
 class UsersController extends Controller
 {
@@ -128,12 +129,12 @@ class UsersController extends Controller
 
         $total = User::count();
         if ($search) {
-            $filteredTotal = User::where("name", "like", "%$search%")->orWhere("email", "like", "%$search%")->count();
+            $filteredTotal = User::where(db::raw("lower(name)"), "like", "%$search%")->orWhere(db::raw("lower(email)"), "like", "%$search%")->count();
         } else {
             $filteredTotal = $total;
         }
 
-        $data = User::where("name", "like", "%$search%")->orWhere("email", "like", "%$search%")
+        $data = User::where(db::raw("lower(name)"), "like", "%$search%")->orWhere(db::raw("lower(email)"), "like", "%$search%")
             ->offset($offset)
             ->limit($limit)
             ->orderBy($orderBy, $orderType)
@@ -143,7 +144,7 @@ class UsersController extends Controller
         foreach ($data as $dt) {
             $urlEdit = url($this->url . '/' . $dt->id . '/edit');
             $actionData = '<a href="' . $urlEdit . '" class="btn btn-sm btn-info" title="Edit">Edit</a>';
-            $actionData .= '<form action="' . url($this->url . '/' . $dt->id . '/delete') . '" method="post">
+            $actionData .= '<form action="' . url($this->url . '/' . $dt->id . '/delete') . '" method="post" style="display: inline;">
                                ' . csrf_field() . method_field('DELETE') . '
                                <button type="submit" class="btn btn-sm btn-danger" title="Delete">Delete</button>
                             </form>';
