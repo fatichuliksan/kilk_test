@@ -9,7 +9,8 @@ class Classroom extends Model
     protected $primaryKey = 'classroom_id';
     protected $table = 'classrooms';
     protected $fillable = [
-        'name'
+        'name',
+        'teacher_id',
     ];
 
     public $timestamps = true;

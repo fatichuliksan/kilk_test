@@ -21,7 +21,7 @@ class CreateStudentsTable extends Migration
 
             $table->foreign('classroom_id')->references('classroom_id')->on('classrooms')
                 ->onUpdate('NO ACTION')
-                ->onDelete('set null');
+                ->onDelete('RESTRICT');
         });
     }
 

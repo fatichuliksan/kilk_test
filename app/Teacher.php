@@ -9,7 +9,7 @@ class Teacher extends Model
     protected $primaryKey = 'teacher_id';
     protected $table = 'teachers';
     protected $fillable = [
-        'name'
+        'name',
     ];
 
     public $timestamps = true;

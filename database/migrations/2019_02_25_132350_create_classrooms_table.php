@@ -21,7 +21,7 @@ class CreateClassroomsTable extends Migration
 
             $table->foreign('teacher_id')->references('teacher_id')->on('teachers')
                 ->onUpdate('CASCADE')
-                ->onDelete('set null');
+                ->onDelete('RESTRICT');
         });
     }
 

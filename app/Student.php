@@ -9,7 +9,8 @@ class Student extends Model
     protected $primaryKey = 'student_id';
     protected $table = 'students';
     protected $fillable = [
-        'name'
+        'name',
+        'classroom_id',
     ];
 
     public $timestamps = true;
