@@ -17,7 +17,6 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-{{--    <link href="{{ asset('/vendor/bootstrap-4.0.0-dist/css/bootstrap.min.css') }}" rel="stylesheet">--}}
     <link href="{{ asset('/vendor/DataTables-1.10.19/css/jquery.dataTables.min.css') }}" rel="stylesheet">
 
     @yield('css')
@@ -34,8 +33,6 @@
 </div>
 <!-- Scripts -->
 <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/jquery-3.3.1.min.js') }}"></script>
-{{--<script type="text/javascript" src="{{ asset('/vendor/bootstrap-4.0.0-dist/js/bootstrap.min.js') }}"></script>--}}
 <script type="text/javascript" src="{{ asset('/vendor/DataTables-1.10.19/js/jquery.js') }}"></script>
 <script type="text/javascript" src="{{ asset('/vendor/DataTables-1.10.19/js/jquery.dataTables.min.js') }}"></script>
 @yield('js')
